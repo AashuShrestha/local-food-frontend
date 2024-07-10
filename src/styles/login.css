@@ -1,0 +1,9 @@
+/* Login.css */
+  
+  .btn-login {
+    width: 100%;
+    border-radius: 8px;
+    padding: 5px 2px;
+    border: none; /* Border radius for the login button */
+  }
+  
