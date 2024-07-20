@@ -62,7 +62,7 @@ const Navbar = () => {
         >
           <img
             src="images/logo.png"
-            alt="Meat shop Logo"
+            alt="Local Food shop Logo"
             width="70"
             height="55"
             style={{ marginRight: "10px" }}
@@ -210,7 +210,7 @@ export default Navbar;
 //         >
 //           <img
 //             src="images/logo.png"
-//             alt="Meat shop Logo"
+//             alt="Local Food shop Logo"
 //             width="70"
 //             height="55"
 //             style={{ marginRight: "10px" }}

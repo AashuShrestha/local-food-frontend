@@ -60,7 +60,7 @@ Food Store "
         </h2>
         <p>Here are the special products available</p>
         {/* Gallery */}
-        <div className="row container-fluid mt-0 p-0 ">
+        <div className="row container-fluid mt-0 p-0 d-flex justify-content-around">
           {categories.map((category, index) => (
             <div
               key={category._id}

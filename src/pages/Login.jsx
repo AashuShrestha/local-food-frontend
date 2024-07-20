@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { loginApi } from "../apis/Api";
 import Navbar from "../components/Hearder";
@@ -67,8 +67,8 @@ const Login = () => {
       >
         <div className="container">
           <div className="row gx-lg-5 align-items-center">
-            <div className="col-lg-6 mb-5 mb-lg-0 " >
-              <img src="/images/logo.png" alt="" height="350px" width="full"/>
+            <div className="col-lg-6 mb-5 mb-lg-0 ">
+              <img src="/images/hero.png" alt="" height="550px" width="full" />
             </div>
 
             <div className="col-lg-6 mb-5 mb-lg-0">
@@ -113,7 +113,9 @@ const Login = () => {
                       type="submit"
                       onClick={handleSubmit}
                       className="btn-login  btn-block mb-4"
-                      style={{background: "linear-gradient(45deg, #fab96d, #ff650f)",}}
+                      style={{
+                        background: "linear-gradient(45deg, #fab96d, #ff650f)",
+                      }}
                     >
                       Login
                     </button>
@@ -121,7 +123,7 @@ const Login = () => {
                     <div className="text-center d-flex">
                       <p>Don't have an account?</p>
                       <Link
-                        to="/signup"
+                        to="/register"
                         className="form-check-label mx-2 text-primary text-decoration-none"
                       >
                         Sign Up

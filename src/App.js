@@ -26,6 +26,9 @@ import UserListing from "./pages/admin/dashboard/Users";
 import MyOrders from "./pages/MyOrders";
 import AllOrders from "./pages/admin/dashboard/Orders";
 import FavoritePage from "./pages/FavoritePage";
+import Delivery from "./pages/DeliveryDetails";
+import PaymentSuccess from "./pages/PaymentSuccess";
+import PaymentPage from "./pages/PaymentPage";
 
 function App() {
   const [isAdmin, setIsAdmin] = useState(false);
@@ -53,6 +56,9 @@ function App() {
           <Route element={<UserRoutes/>}>
           <Route path="/profile" element={<Profile />} />
           <Route path="/cart" element={<Cart/>} />
+          <Route path="/delivery" element={<Delivery/>} />
+          <Route path="/payment" element={<PaymentPage/>} />
+          <Route path="/payment-success" element={<PaymentSuccess/>} />
           <Route path="/favorites" element={<FavoritePage/>} />
           <Route path="/myOrders" element={<MyOrders/>} />
 

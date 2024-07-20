@@ -124,3 +124,8 @@ export const addToFavoritesApi = (data) =>
 // Remove from favorites
 export const removeFromFavoritesApi = (userId, productId) =>
   Api.delete(`/api/favorites/remove_from_favorites/${userId}/${productId}`, config);
+
+
+export const verifyPaymentApi = (data) => Api.post('/api/payment/verify-payment', data)
+
+

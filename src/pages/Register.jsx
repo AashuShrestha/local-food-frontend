@@ -4,7 +4,7 @@ import { registerApi } from '../apis/Api';
 import "bootstrap/dist/css/bootstrap.css";
 import '../styles/login.css';
 import Navbar from '../components/Hearder';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const SignUp = () => {
   const [firstName, setFirstName] = useState('');
@@ -67,7 +67,7 @@ const navigate = useNavigate();
         <div className="container">
           <div className="row gx-lg-5 align-items-center">
             <div className="col-lg-6 mb-5 mb-lg-0">
-            <img src="/images/logo.png" height="350px" width="full" alt="" />
+            <img src="/images/hero.png" height="550px" width="full" alt="" />
             </div>
 
             <div className="col-lg-6 mb-5 mb-lg-0">
@@ -107,9 +107,9 @@ const navigate = useNavigate();
                     {/* Login buttons */}
                     <div className="text-center d-flex">
                       <p>Already have an account?</p>
-                      <label className="form-check-label mx-2 text-primary" htmlFor="form2Example33">
+                     <Link to="/login"> <label className="form-check-label mx-2 text-primary" htmlFor="form2Example33">
                         Login
-                      </label>
+                      </label></Link>
                     </div>
                   </form>
                 </div>

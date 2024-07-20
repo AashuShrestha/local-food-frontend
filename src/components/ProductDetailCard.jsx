@@ -6,12 +6,6 @@ import {
   ShoppingBagOutlined,
 } from "@mui/icons-material";
 
-import CheckCircleIcon from "@mui/icons-material/CheckCircle";
-import LoopIcon from "@mui/icons-material/Loop";
-import MoneyOffIcon from "@mui/icons-material/MoneyOff";
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
-import Typography from "@mui/material/Typography";
 
 import { Box, Button, Rating } from "@mui/material";
 import { useContext, useEffect, useState } from "react";
@@ -68,7 +62,8 @@ const ProductDetail = () => {
         },
       ],
     };
-    addToCart(cart);
+     addToCart(cart);
+    
   };
   // Function to handle quantity increase
   const increaseQuantity = () => {
@@ -99,6 +94,7 @@ const ProductDetail = () => {
     addToFavoritesApi(favorite)
       .then((response) => {
         toast.success("Product added to favorites!");
+        // navigate('/')
       })
       .catch((error) => {
         toast.error("Failed to add product to favorites.");
@@ -112,8 +108,8 @@ const ProductDetail = () => {
 
   return (
     <>
-      <div className="container-fluid mt-3">
         <Navbar />
+      <div className="container-fluid mt-3">
         <div className="row d-flex ">
           <section className="col-lg-5">
             <div className="product-image ">
@@ -154,17 +150,7 @@ const ProductDetail = () => {
                   {/* Add chips for similar products */}
                   <Rating></Rating>
                   <p className="fs-9">1K (4.5 rating)</p>
-                  <Button
-                    variant="outlined"
-                    startIcon={<FavoriteOutlined />}
-                    onClick={handleAddToFavorites}
-                    style={{
-                      backgroundColor: "#0b2912",
-                      color: "white",
-                    }}
-                  >
-                    Add to Favorites
-                  </Button>
+                  
                 </div>
               </div>
               <div className="mt-3 d-flex justify-content-between flex-column">
@@ -196,25 +182,24 @@ const ProductDetail = () => {
                 </div>
 
                 <div className="className d-flex justify-content-evenly flex mt-5">
-                  <Button
-                    variant="outline"
-                    startIcon={<ShoppingBagOutlined />}
-                    onClick={handleShare}
+                <Button
+                    variant="outlined"
+                    startIcon={<FavoriteOutlined />}
+                    onClick={handleAddToFavorites}
                     style={{
-                      backgroundColor: "#0b2912",
                       color: "white",
+                      background: "linear-gradient(45deg, #fab96d, #ff650f)",
                     }}
                   >
-                    Buy Now
+                    Add to Favorites
                   </Button>
-
                   <Button
                     variant="outlined"
                     startIcon={<FaShoppingCart />}
                     onClick={handleAddToCart}
                     style={{
-                      backgroundColor: "#0b2912",
                       color: "white",
+                      background: "linear-gradient(45deg, #fab96d, #ff650f)",
                     }}
                   >
                     Add to Cart
@@ -229,97 +214,7 @@ const ProductDetail = () => {
               backgroundColor: "#FFFFFF",
             }}
           >
-            <Box
-              className=" h-maxcontent d-flex flex-column justify-content-evenly"
-              sx={{ top: "10%" }}
-            >
-              <div className="">
-                <span className="fs-4 fw-bold mt-2">Delivery Information</span>
-              </div>
-              <div className="mt-3 mb-2">
-                <DeliveryDining />
-                <span className=""> Mitranagar, Gongabu</span>
-              </div>
-              <Button
-                variant="outlined"
-                onClick={() => addToCart(products)}
-                style={{
-                  height: "40px", // Set your desired height
-                  width: "30%", // Set your desired width as a percentage
-                  maxWidth: "250px", // Optional: Set a maximum width if needed
-                  backgroundColor: "#0b2912",
-                  color: "white",
-                }}
-              >
-                Change
-              </Button>
-              <div className="mt-3 mb-3">
-                <MonetizationOnSharp />
-                <span className=""> Cash on Delivery</span>
-              </div>
-              <hr />
-              {/* <div className="mt-3">
-                <DateRange />
-                <LocalizationProvider dateAdapter={AdapterDayjs}>
-                  <DatePicker
-                    label="Delivery Date"
-                    value={value}
-                    onChange={(newValue) => setValue(newValue)}
-                  />
-                </LocalizationProvider>
-              </div> */}
-              <Card className="bg-light shadow-none mt-3">
-                <CardContent>
-                  <Typography variant="h5" component="div">
-                    Service
-                  </Typography>
-
-                  {/* Authenticity */}
-                  <div
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      marginBottom: "10px",
-                    }}
-                  >
-                    <CheckCircleIcon
-                      style={{ marginRight: "10px", color: "green" }}
-                    />
-                    <Typography variant="body1">
-                      100% Authentic from Trusted Brand
-                      <br />
-                      or Get 2x Your Money Back
-                    </Typography>
-                  </div>
-
-                  {/* Return Policy */}
-                  <div
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      marginBottom: "10px",
-                    }}
-                  >
-                    <LoopIcon style={{ marginRight: "10px", color: "blue" }} />
-                    <Typography variant="body1">
-                      14 days free & easy return
-                      <br />
-                      Change of mind is not applicable
-                    </Typography>
-                  </div>
-
-                  {/* Warranty */}
-                  <div style={{ display: "flex", alignItems: "center" }}>
-                    <MoneyOffIcon
-                      style={{ marginRight: "10px", color: "orange" }}
-                    />
-                    <Typography variant="body1">
-                      1 Year Brand Warranty
-                    </Typography>
-                  </div>
-                </CardContent>
-              </Card>
-            </Box>
+        
           </section>
         </div>
       </div>
